@@ -8,6 +8,7 @@ library(ggmap)
 library(dataRetrieval)
 library(selectr)
 library(XML)
+library(plotly)
 ```
 
 
