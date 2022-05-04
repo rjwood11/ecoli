@@ -17,7 +17,7 @@ jobs:
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.ECOLI_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
@@ -40,6 +40,7 @@ jobs:
           install.packages('osmdata')
           install.packages('ggmap')
           install.packages('sf')
+          install.packages('selectr')
           install.packages('plotly')
           install.packages('XML')
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
