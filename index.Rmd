@@ -22,17 +22,17 @@ The last update happened at `r time` Central Time.
 
 ``` {r, echo=FALSE,warning=FALSE,message=FALSE,error=FALSE, results='hide',fig.keep='all'}
 
-big_streets = getbb("Nashville Tennessee") %>%
+#big_streets = getbb("Nashville Tennessee") %>%
+#  opq() %>%
+#  add_osm_feature(key = "highway", 
+#                  value = c("motorway", "primary", "primary_link")) %>%
+#  osmdata_sf()
+
+med_streets = getbb("Nashville Tennessee") %>%
   opq() %>%
   add_osm_feature(key = "highway", 
-                  value = c("motorway", "primary", "primary_link")) %>%
+                   value = c("secondary", "tertiary", "secondary_link", "tertiary_link")) %>%
   osmdata_sf()
-
-# med_streets = getbb("Nashville Tennessee") %>%
-#   opq() %>%
-#   add_osm_feature(key = "highway", 
-#                   value = c("secondary", "tertiary", "secondary_link", "tertiary_link")) %>%
-#   osmdata_sf()
 
 river = getbb("Nashville Tennessee") %>%
   opq()%>%
